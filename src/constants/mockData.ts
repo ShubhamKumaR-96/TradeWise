@@ -1,19 +1,6 @@
-import type { Stock, Holding, Order } from "@/types";
+import type { Stock, Holding, Order,NavItem, PortfolioSummary  } from "@/types";
 
-export const generateSparkline=(basePrice:number,points=20):number[]=>{
-    const arr:number[]=[basePrice]
-
-    for (let i=1;i<points;i++){
-        const prev=arr[i-1]
-
-        const volatility=prev*0.008
-
-        const delta=(Math.random() - 0.48) * volatility
-
-        arr.push(Math.max(prev + delta, basePrice*0.9))
-    }
-    return arr
-}
+import { generateSparkline } from "@/utils/generateSparkline";
 
 
 export const INITIAL_STOCKS: Stock[] = [
@@ -344,7 +331,7 @@ export const INITIAL_PORTFOLIO: PortfolioSummary = {
   usedMargin: 45620.00,
 }
 
-import type { NavItem, PortfolioSummary } from '@/types'
+
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'dashboard',  icon: '▣',  label: 'Dashboard'  },
