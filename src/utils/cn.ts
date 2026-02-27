@@ -1,7 +1,4 @@
 
-// cn=classNames Utility
-
-
 type ClassValue = string | number | boolean |  null | undefined | ClassValue[] | {[key:string]:boolean}
 
 const toClass=(value:ClassValue):string=>{
